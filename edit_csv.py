@@ -5,7 +5,7 @@ import math
 from shutil import copyfile
 
 #将图片分到类别文件夹中
-_reader = open("test.csv", "r")
+_reader = open("train.csv", "r")
 reader = list(csv.reader(_reader))
 for line in reader:
     if line[0] == 'Type':
@@ -16,8 +16,8 @@ for line in reader:
     print(int(float(PhotoAmt)))
     if int(float(PhotoAmt))>0:
         for i in range(int(float(PhotoAmt))):
-            ori_name = '/root/kagglePetFinder/cy/test_images/'+str(PetID)+'-'+str(i+1)+'.jpg'
-            dst_name = '/root/kagglePetFinder/cy/test_images/'+str(AdoptionSpeed)+'/'+str(PetID)+'-'+str(i+1)+'.jpg'
+            ori_name = '/root/kagglePetFinder/cy/train_images/'+str(PetID)+'-'+str(i+1)+'.jpg'
+            dst_name = '/root/kagglePetFinder/cy/train_images/'+str(AdoptionSpeed)+'/'+str(PetID)+'-'+str(i+1)+'.jpg'
             copyfile(ori_name,dst_name)
 
 
